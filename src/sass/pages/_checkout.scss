@@ -1,0 +1,6 @@
+.checkout {
+    min-height: calc(100vh - 20rem);
+    @include flex( center, center);
+    margin: 2rem 0;
+    
+}

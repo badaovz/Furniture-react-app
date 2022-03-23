@@ -1,0 +1,63 @@
+.stripeCheckout {
+    box-shadow: $box-shadow-dark;
+    padding: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    &__notify {
+        font-size: 2rem;
+        color: $txt-color-primary;
+    }
+
+    &__info {
+        font-size: 2rem;
+        color: $txt-color-primary;
+        &__amount {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+    }
+
+    &__form {
+        padding: 1rem;
+        border: 1px solid $txt-color-second;
+        border-radius: $border-radius;
+        
+        &__cardElement {
+            font-size: 1rem;
+            color: red;
+
+        }
+        &__btn {
+            width: 100%;
+            margin-top: 1rem;
+            background-color: $purple-color-light;
+
+            &:hover {
+                background-color: $purple-color-dark;
+            }
+
+            &__content {
+
+                &__spinner {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    border: 3px solid $white-color;
+                    border-top-color: $gray-color-light;
+                    animation: roll .5s linear infinite;
+
+                }
+            }
+        }
+
+        &__result-message {
+            font-size: 1rem;
+            color: $txt-color-second;
+            margin-top: .5rem;
+
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}

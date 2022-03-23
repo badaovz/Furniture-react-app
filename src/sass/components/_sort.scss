@@ -1,0 +1,47 @@
+.sort {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    gap: 0 2rem;
+    place-items: center;
+    padding: .6rem 0;
+    color: $txt-color-primary;
+    font-size: 1rem;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        place-items: start;
+        gap: 1rem 0;
+    }
+
+    hr {
+        width: 100%;
+    }
+    &__icons {
+        @include flex( center, space-between);
+        &__icon {
+            margin-right: .5rem;
+            border: 1px solid $black-color-light;
+            padding: .3rem;
+            border-radius: $border-radius;
+            &.active {
+                background-color: $black-color-light;
+                color: $white-color;
+            }
+        }
+
+    } 
+    
+
+    &__form {
+        &__label {
+            font-size: 1rem;
+            color: $txt-color-primary;
+            margin-right: .5rem;
+        }
+
+        select {
+            font-size: 1rem;
+            color: $txt-color-primary;
+        }
+    }
+}

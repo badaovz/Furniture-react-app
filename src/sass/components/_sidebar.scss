@@ -1,0 +1,89 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $white-color;
+    padding: 3rem;
+    z-index: 1000;
+    overflow: hidden;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: $transition;
+
+    @include mobile {padding: 1.6rem;}
+
+    &.show {
+        transform: translateX(0)
+    }
+
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0 2rem;
+        align-items: center;
+        &__logo {
+            height: 60px;
+        }
+
+        &__close {
+            font-size: 3rem;
+            color: $red-color-dark;
+            @include mobile {font-size: 2.5rem;}
+        }
+    }
+
+    &__links {
+        margin-top: 2rem;
+        text-align: center;
+        li {
+            text-transform: capitalize;
+            font-size: 2rem;
+            color: $txt-color-second;
+            padding: 1rem;
+        }
+    }
+
+    &__cart-login {
+        margin-top: 4rem;
+        @include flex( end, space-between);
+
+        &__cart {
+            color: $txt-color-primary;
+            font-size: 1.5rem;
+            margin-right: 2rem;
+            &__icon {
+                text-align: center;
+                margin-left: .3rem;
+                position: relative;
+
+                &__total {
+                    @include flex( center, center);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 0;
+                    width: 0;
+                    transform: translate(50%, -50%);
+                    padding: 12px;
+                    border-radius: 50%;
+                    background-color: $bg-btn-color;
+                    color: $white-color;
+                    font-size: .8rem;
+                    
+                }
+            }
+        }
+
+        &__login {
+            color: $txt-color-primary;
+            font-size: 1.5rem;
+            &__icon {
+                margin-left: .3rem;
+            }
+        }
+
+    }
+}

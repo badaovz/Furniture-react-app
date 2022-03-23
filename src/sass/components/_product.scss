@@ -1,0 +1,60 @@
+.product {
+    &__container {
+        position: relative;
+        height: 175px;
+        // width: 360px;
+
+        &:hover &__box {
+            visibility: visible;
+            opacity: 1;
+        }
+        &__img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: $border-radius;
+        }
+        &__box {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .4);
+            @include flex( center, center);
+            visibility: hidden;
+            opacity: 0;
+            // display: none;
+            transition: $transition;
+            border-radius: $border-radius;
+            
+            &__icon {
+                @include flex( center, center);
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $bg-btn-color;
+                font-size: 1.5rem;
+                color: $white-color;
+                
+            }
+         
+        }
+    }
+
+    &__footer {
+        @include flex( center, space-between);
+        margin-top: 1rem;
+        
+        &__name {
+            font-size: 1rem;
+            color: $txt-color-second;
+            text-transform: capitalize;
+        }
+
+        &__price {
+            font-size: 1rem;
+            color: $bg-btn-color;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.loading {
+    height: 6rem;
+    width: 6rem;
+    border: 5px solid $service-bg;
+    border-top-color: $bg-btn-color;
+    border-radius: 50%;
+    animation: roll .5s linear infinite;
+    margin: 35vh auto;
+
+}

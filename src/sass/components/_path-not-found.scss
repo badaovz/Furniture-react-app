@@ -1,0 +1,23 @@
+.pathNotFound {
+    min-height: calc(100vh - 5rem);
+    @include flex( center, center);
+    text-align: center;
+    background-color: $service-bg;
+
+    color: $txt-color-primary;
+    &__content {
+        &__errorCode {
+            font-size: 8rem;
+        }
+    
+        &__notify {
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+
+        &__btn {
+            margin: 0 auto;
+        }
+    }
+
+}

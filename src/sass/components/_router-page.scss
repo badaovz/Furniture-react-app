@@ -1,0 +1,29 @@
+.routerPage {
+    padding: 2.5rem 1rem;
+    background-color: $service-bg;
+    font-size: 2rem;
+    color: $bg-btn-color;
+    text-transform: capitalize;
+
+    @include mobile {
+        font-size: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    &__item {
+        display: flex;
+        &__route {
+            margin-right: .5rem;
+            cursor: pointer;
+            &:hover {
+                color: $brown-color-dark;
+            }
+        }
+
+        &__name {
+            color: $brown-color-dark;
+            cursor: default;
+        }
+    }
+
+}

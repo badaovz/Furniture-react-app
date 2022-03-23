@@ -1,0 +1,127 @@
+.filters {
+    &::-webkit-scrollbar {
+        width: 0; 
+    }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5.1rem;
+    height: calc(100vh - 5.1rem);
+    overflow: auto;
+
+    @include mobile {
+        display: none;
+    }
+    @include tablet {
+        height: unset;
+    }
+    
+    &__search {
+        font-size: 1rem;
+        padding: .6rem;
+        color: $txt-color-primary;
+        border-color: transparent;
+        background-color: $bg-color;
+        &::placeholder {
+            color: $txt-color-second;
+            letter-spacing: $letter-spacing;
+        }
+    }
+
+    h3 {
+        font-size: 1rem;
+        color: $txt-color-primary;
+        letter-spacing: $letter-spacing;
+        margin: 1rem 0 .4rem;
+    }
+
+    button {
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    &__category {
+        &__btn {
+            padding: .5rem 0;
+            color: $txt-color-second;
+            border-bottom: 1px solid transparent;
+            font-size: .8rem;
+            &.active {
+                border-bottom: 1px solid $txt-color-second;
+            }
+        }
+    }
+
+    &__company {
+        &__select {
+            text-transform: capitalize;
+            color: $txt-color-second;
+            border: none;
+            background-color: $bg-color;
+            padding: .2rem .6rem;
+            font-size: .8rem;
+        }
+    }
+
+
+    &__colors {
+        // display: flex;
+        &__content {
+            @include flex(center, start);
+            &__all {
+                color: $txt-color-second;
+                font-size: .8rem;
+                margin-right: .5rem;
+                border-bottom: 1px solid transparent;
+                &.active {
+                    border-bottom: 1px solid $txt-color-second;
+
+                }
+            }
+            &__btn {
+                padding: .5rem;
+                border-radius: 50%;
+                margin-right: .5rem;
+                opacity: .5;
+                font-size: .5rem;
+                color: $white-color;
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+        
+    }
+    
+    &__price {
+        margin-top: 1rem;
+        color: $txt-color-primary;
+
+    }
+
+    &__shipping {
+        margin: 1rem 0;
+        &__form {
+            // text-align: center;
+
+            &__label {
+                font-size: 1rem;
+                color: $txt-color-primary;
+                margin-right: .5rem;
+            }
+
+        }
+    }
+
+    &__clearAll {
+        background-color: $red-color-dark;
+        color: $white-color;
+        border-radius: $border-radius;
+        padding: .5rem;
+        font-size: .8rem;
+
+        &:hover{
+            background-color: $red-color-light;
+            color: $txt-color-primary;
+        }
+    }
+}

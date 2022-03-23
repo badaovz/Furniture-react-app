@@ -1,0 +1,101 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    height: 5rem;
+    @include flex( center, space-between);
+    padding: 1rem 0;
+    letter-spacing: $letter-spacing;
+    z-index: 100;
+    background-color: $bg-color;
+
+    &__left {
+        @include flex( center, space-between);
+        @include mobile-tablet {
+            width: 100%;
+        }
+
+        &__img {
+            height: 60px;
+        }
+
+        &__icon {
+            font-size: 2rem;
+            color: $bg-btn-color;
+            display: none;
+            cursor: pointer;
+
+            @include mobile-tablet {
+                display: block;
+                // padding-right: 2rem;
+            }
+        }
+    }
+
+    &__links {
+        flex: 1;
+        ul {
+            @include flex(center, center);
+        }
+        &__link {
+
+            padding: .6rem .5rem;
+            margin: 0 1rem;
+            font-size: 1rem;
+            color: $txt-color-primary;
+            text-transform: capitalize;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border-bottom: 2px solid $bg-btn-color;
+                
+            }
+        }
+
+        @include mobile-tablet {
+            display: none;
+        }
+    }
+
+    &__right {
+        @include flex( end, space-between);
+
+        &__cart {
+            color: $txt-color-primary;
+            font-size: 1.5rem;
+            margin-right: 2rem;
+            &__icon {
+                text-align: center;
+                margin-left: .3rem;
+                position: relative;
+
+                &__total {
+                    @include flex( center, center);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 0;
+                    width: 0;
+                    transform: translate(50%, -50%);
+                    padding: 12px;
+                    border-radius: 50%;
+                    background-color: $bg-btn-color;
+                    color: $white-color;
+                    font-size: .8rem;
+                    
+                }
+            }
+        }
+
+        &__login {
+            color: $txt-color-primary;
+            font-size: 1.5rem;
+            &__icon {
+                margin-left: .3rem;
+            }
+        }
+
+        @include mobile-tablet {
+            display: none;
+        }
+
+    }
+}
