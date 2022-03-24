@@ -26,7 +26,7 @@ function StripeCheckout() {
     const createPaymentIntent = async () => {
         try {
             const { data } = await axios.post(
-                '/.netlify/functions/create-payment-intent',
+                '/.functions/create-payment-intent',
                 JSON.stringify({cart, shipping_fee, total_amount})
             )
             setClientSecret(data.clientSecret);
@@ -99,9 +99,9 @@ function StripeCheckout() {
                     <span className='stripeCheckout__form__btn__content'>
                         {
                             processing ? 
-                            <div 
+                            <span 
                                 className='stripeCheckout__form__btn__content__spinner'
-                            ></div> :
+                            ></span> :
                             'Pay'
                         }
                     </span>

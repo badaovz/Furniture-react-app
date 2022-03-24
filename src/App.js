@@ -1,21 +1,18 @@
-import Navbar from './components/Navbar';
-import {Routes, Route, Outlet} from 'react-router-dom';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import About from './pages/About';
-import Footer from './components/Footer';
-import Cart from './pages/Cart';
-import SingleProduct from './pages/SingleProduct';
-import Sidebar from './components/Sidebar';
-import AuthWrapper from './pages/AuthWrapper';
+import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import PathNotFound from './components/PathNotFound';
+import About from './pages/About';
+import AuthWrapper from './pages/AuthWrapper';
+import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import SingleProduct from './pages/SingleProduct';
 
 function App() {
   return (
-    <AuthWrapper>
-      <div className="app">
+    <div className="app">
+      <AuthWrapper>
         <Routes>
           <Route path='/' element={<Layout />} >
             <Route index element={<Home />} />
@@ -28,8 +25,8 @@ function App() {
             <Route path='*' element={<PathNotFound />} />
           </Route>
         </Routes>
-      </div>
-    </AuthWrapper>
+      </AuthWrapper>
+    </div>
   );
 }
 

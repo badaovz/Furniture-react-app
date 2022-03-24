@@ -8,6 +8,7 @@ import RoutePage from '../components/RoutePage';
 import {Link} from 'react-router-dom';
 import {FaStar, FaRegStar, FaCheck, FaMinus, FaPlus} from 'react-icons/fa'
 import { formatPrice } from '../utils/helpers';
+import Error from '../components/Error';
 
 function SingleProduct({path}) {
     const [count, setCount] = useState(1);
@@ -18,14 +19,8 @@ function SingleProduct({path}) {
     const {Id} = useParams();
 
     const starRef = useRef(null);
-
-
-
-   
     
     console.log('SingProduct: ', single_product)
-
-
 
     const {name, stars, stock, reviews, price, images, description, company, colors, category} = single_product;
 
@@ -72,6 +67,10 @@ function SingleProduct({path}) {
 
     if(single_product_loading) {
         return <Loading />
+    }
+
+    if(single_product_error) {
+        return <Error />
     }
 
     return (
@@ -181,4 +180,4 @@ function SingleProduct({path}) {
     )
 }
 
-export default SingleProduct
+export default SingleProduct;

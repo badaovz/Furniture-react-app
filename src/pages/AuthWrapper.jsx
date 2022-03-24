@@ -7,7 +7,7 @@ function AuthWrapper({children}) {
 
     if(isLoading) {
         return (
-            <h3>Loading...</h3>
+            <div className='loading'></div>
         )
     }
 
@@ -18,8 +18,10 @@ function AuthWrapper({children}) {
     }
 
     return (
-    <>{children}</>
+    <div>
+        {children}
+    </div>
     )
 }
 
-export default AuthWrapper
+export default AuthWrapper;

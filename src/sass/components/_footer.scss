@@ -24,10 +24,11 @@
     }
 
     &__contact {
-        h5 {
+        span {
             min-width: 80px;
             font-size: 1rem;
             color: $bg-btn-color;
+            font-weight: bold;
         }
         p {
             display: flex;         

@@ -5,10 +5,12 @@ import {Link} from 'react-router-dom';
 import {links} from '../utils/constants';
 import {useProductsContext} from '../context/products_context';
 import {useCartContext} from '../context/cart_context';
+import {useUserContext} from '../context/user_context';
 
 function Sidebar() {
     const {isSidebarOpen, closeSidebar} = useProductsContext();
     const {total_items} = useCartContext();
+    const {myUser, loginWithRedirect, logout, isAuthenticated} = useUserContext();
 
     return (
         <div className={`sidebar ${ isSidebarOpen ? 'show' : ''}`}>
@@ -53,11 +55,26 @@ function Sidebar() {
                         <span className='sidebar__cart-login__cart__icon__total'>{total_items}</span>
                     </span>
                 </Link>
-
-                <button className='sidebar__cart-login__login'>
+                
+                {
+                isAuthenticated ? 
+                <button 
+                    className='navbar__right__login'
+                    onClick={() => logout({ returnTo: window.location.origin })}
+                >
+                    <p>{myUser&& myUser.name}</p>
+                    (Logout)
+                    {/* <span className='navbar__right__login__icon'><FaUserPlus /></span> */}
+                </button> : 
+                <button 
+                    className='navbar__right__login'
+                    onClick={loginWithRedirect}
+                >
                     Login
-                    <span className='sidebar__cart-login__login__icon'><FaUserPlus /></span>
+                    <span className='navbar__right__login__icon'><FaUserPlus /></span>
                 </button>
+                }
+                
             </div>
         </div>
     )

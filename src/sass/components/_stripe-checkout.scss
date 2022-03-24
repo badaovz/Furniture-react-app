@@ -22,11 +22,6 @@
         border: 1px solid $txt-color-second;
         border-radius: $border-radius;
         
-        &__cardElement {
-            font-size: 1rem;
-            color: red;
-
-        }
         &__btn {
             width: 100%;
             margin-top: 1rem;
@@ -39,8 +34,9 @@
             &__content {
 
                 &__spinner {
-                    width: 16px;
-                    height: 16px;
+                    display: flex;
+                    width: 14px;
+                    height: 14px;
                     border-radius: 50%;
                     border: 3px solid $white-color;
                     border-top-color: $gray-color-light;

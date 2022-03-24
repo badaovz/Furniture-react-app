@@ -1,0 +1,9 @@
+.error {
+    min-height: calc(100vh - 5rem);
+    @include flex( center, center);
+
+    h3 {
+        font-size: 4rem;
+        color: $txt-color-primary
+    }
+}

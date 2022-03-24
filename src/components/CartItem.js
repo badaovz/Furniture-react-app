@@ -3,7 +3,7 @@ import {useCartContext} from '../context/cart_context';
 import {formatPrice} from '../utils/helpers';
 import {FaTrash, FaPlus, FaMinus} from 'react-icons/fa';
 
-function CartItem({id, color, amount, image, max, name, price}) {
+function CartItem({id, color, amount, image, name, price}) {
     const {removeCartItem, toggleAmount} = useCartContext();
 
     return (
@@ -15,7 +15,7 @@ function CartItem({id, color, amount, image, max, name, price}) {
                         {name}
                     </h3>
                     <p className='cartItem__info__content__color'>
-                        Color: <div style={{backgroundColor: `${color}`}}></div>
+                        Color: <span style={{backgroundColor: `${color}`}}></span>
                     </p>
                     <p className='cartItem__info__content__price'>{formatPrice(price)}</p>
                 </div>

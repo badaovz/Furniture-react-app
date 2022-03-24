@@ -111,7 +111,7 @@ function Filters() {
                         name='shipping' 
                         type='checkbox'
                         checked={shipping}
-                        onClick={(e) => updateFilters(e)}
+                        onChange={(e) => updateFilters(e)}
                     />
                 </form>
 

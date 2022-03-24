@@ -17,19 +17,24 @@ function Products({path}) {
       <div className='products'>
         <section className='products__filters'>
           <Filters />
-
         </section>
         <section className='products__container'>
           <Sort />
-          <div className={`products__container__content ${grid_view ? '' : 'list'}`}>
-            {
-              filtered_products.map(product => (
-                grid_view ? 
-                <Product {...product} key={product.id} /> :
-                <ProductList {...product} key={product.id}/>
-              ))
-            }
-          </div>
+          {
+            filtered_products.length < 1 ?
+            <div className='products__container__notify'>
+              <h3>Sorry, no products matched your search.</h3>
+            </div> :
+            <div className={`products__container__content ${grid_view ? '' : 'list'}`}>
+              {
+                filtered_products.map(product => (
+                  grid_view ? 
+                  <Product {...product} key={product.id} /> :
+                  <ProductList {...product} key={product.id}/>
+                ))
+              }
+            </div>
+          }
         </section>
       </div>
     </div>

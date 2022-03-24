@@ -6,11 +6,12 @@ import Product from '../components/Product';
 import {services} from '../utils/constants';
 import Service from '../components/Service';
 import {Link} from 'react-router-dom';
-
+import Error from '../components/Error'
 
 function Home() {
   const {featured_products} = useProductsContext();
   console.log(featured_products);
+
   return (
     <div className='home'>
       <section className='home__header'>
@@ -98,4 +99,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
