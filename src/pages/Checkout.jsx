@@ -1,9 +1,6 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import React from 'react';
-import RoutePage from '../components/RoutePage';
-import StripeCheckout from '../components/StripeCheckout';
-
+import { RoutePage, StripeCheckout } from '../components';
 
 function Checkout({path}) {
     const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);

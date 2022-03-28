@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../utils/helpers';
 
@@ -27,4 +26,4 @@ function ProductList({name, price, image, id, description}) {
     )
 }
 
-export default ProductList
+export default ProductList;

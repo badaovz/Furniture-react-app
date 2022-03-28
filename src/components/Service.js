@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import { useState} from 'react'
 
 function Service({id, icon, title, text}) {
   const [click, setClick] = useState(false);
@@ -17,4 +17,4 @@ function Service({id, icon, title, text}) {
   )
 }
 
-export default Service
+export default Service;

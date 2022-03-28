@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaList, FaThLarge } from 'react-icons/fa';
 import { useFilterContext } from '../context/filter_context';
 
@@ -45,4 +44,4 @@ function Sort() {
     )
 }
 
-export default Sort
+export default Sort;

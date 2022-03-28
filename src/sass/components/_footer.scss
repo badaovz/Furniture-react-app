@@ -1,11 +1,19 @@
+.container_footer {
+    background-color: $black-color-light;
+    hr {
+        width: 100%;
+        border-top-color: $brown-color-dark;
+    }
+
+}
 .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
-    background-color: $black-color-light;
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     color: $white-color;
     place-items: center;
+
 
     @include tablet {
         grid-template-columns: 1fr 1fr;
@@ -57,7 +65,6 @@
         color: $white-color;
         text-align: center;
         background-color: $black-color-light;
-        border-top: 2px solid $gray-color-light;
         padding: .4rem 0;
         span {
             color: $bg-btn-color;

@@ -1,12 +1,15 @@
-.navbar {
+.container__navbar{
+    background-color: $bg-color;
     position: sticky;
     top: 0;
+    z-index: 100;
+    box-shadow: $box-shadow-dark;
+}
+.navbar {
     height: 5rem;
     @include flex( center, space-between);
     padding: 1rem 0;
     letter-spacing: $letter-spacing;
-    z-index: 100;
-    background-color: $bg-color;
 
     &__left {
         @include flex( center, space-between);

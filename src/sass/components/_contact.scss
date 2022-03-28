@@ -1,0 +1,68 @@
+.contact {
+    margin: 10rem 0;
+
+    @include mobile {margin: 5rem 0;}
+
+    &__title {
+        font-size: 2rem;
+        color: $txt-color-primary;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0 2rem;
+        place-items: center;
+        margin-top: 2rem;
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 2rem 0;
+            justify-items: start;
+        }
+
+        &__text {
+            font-size: 1rem;
+            color: $txt-color-second;
+            line-height: 1.5rem;
+
+        }
+        
+        &__form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            height: 2.4rem;
+            width: 80vw;
+            max-width: 500px;
+            @include tablet {
+                max-width: 400px;
+            }
+            @include mobile {
+                width: 100%;
+            }
+            
+            &__input {
+                padding: 0 1rem;
+                font-size: 1rem;
+                color: $txt-color-primary;
+                border: 2px solid $black-color-light;
+                
+            }
+            
+            &__btn {
+                border: 2px solid $black-color-light;
+                border-left: none;
+                border-top-right-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+                text-transform: capitalize;
+                font-size: 1rem;
+                padding: 0 .4rem;
+                background-color: $bg-btn-color;
+                color: $black-color-light;
+                
+                &:hover {
+                    color: $white-color;
+                }
+            }
+        }
+    }
+}

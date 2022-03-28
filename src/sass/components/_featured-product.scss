@@ -1,0 +1,39 @@
+.featuredProduct {
+    background-color: $bg-color;
+    padding: 2rem 0;
+    // margin: 3rem auto 0;
+    text-align: center;
+
+    &__title {
+        margin: 3rem auto;
+        &__text {
+            font-size: 2.5rem;
+            color: $txt-color-primary;
+            @include mobile {font-size: 2rem;}
+        }
+
+        &__underline{
+            height: 5px;
+            width: 6rem;
+            background-color: $bg-btn-color;
+            margin: 0 auto;
+        }
+    }
+
+    &__products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 2rem 0;
+        }
+    }
+
+    &__btn {
+        text-align: center;
+        margin: 3rem auto;
+
+    }
+}

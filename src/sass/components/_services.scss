@@ -1,0 +1,51 @@
+.services {
+    background-color: $service-bg;
+    position: relative;
+
+    &__header {
+        padding-top: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2rem;
+        justify-items: start;
+        align-items: center;
+
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 2rem 0;
+            padding: 2rem 0;
+        }
+
+        &__title {
+            font-size: 2rem;
+            color: $brown-color-dark;
+            // padding-right: 10rem;
+
+            @include mobile {
+                padding-right: 0;
+            }
+        }
+
+        &__text {
+            font-size: 1rem;
+            color: $brown-color-dark;
+            line-height: 1.5rem;
+
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 2.5rem;
+        margin-top: 2rem;
+        transform: translateY(20%);
+        @include mobile {
+            grid-template-columns: 1fr;
+            gap: 2rem 0;
+            transform: translateY(0);
+            padding-bottom: 2rem;
+
+        }
+    }
+}

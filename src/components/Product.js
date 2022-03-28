@@ -1,4 +1,3 @@
-import React from 'react';
 import {Link} from 'react-router-dom';
 import {FaSearch} from 'react-icons/fa';
 import { formatPrice } from '../utils/helpers';
@@ -27,4 +26,4 @@ function Product({name, price, image, id}) {
     )
 }
 
-export default Product
+export default Product;

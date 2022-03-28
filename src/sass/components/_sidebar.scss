@@ -49,6 +49,10 @@
     &__cart-login {
         margin-top: 4rem;
         @include flex( end, space-between);
+        @include mobile {
+            align-items: center;
+            line-height: 2.6rem;
+        }
 
         &__cart {
             color: $txt-color-primary;

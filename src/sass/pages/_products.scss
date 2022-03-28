@@ -4,15 +4,12 @@
     grid-template-columns: auto 1fr;
     gap: 0 2rem;
 
-    @include mobile-tablet {
+    @include mobile {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         gap: 2rem;
+        margin: 2rem auto;
     }
-    // @include tablet {
-    //     grid-template-columns: 1fr;
-    //     gap: 2rem 0;
-    // }
 
     &__container {
 
@@ -22,6 +19,11 @@
             @include flex( center, center);
             font-size: 1.5rem;
             color: $txt-color-primary;
+            @include mobile {
+                height: unset;
+                font-size:  1rem;
+                margin-top: 1rem;
+            }
         }
 
         &__content {

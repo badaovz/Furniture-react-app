@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import {useProductsContext} from '../context/products_context';
 import {useFilterContext} from '../context/filter_context';
 import {getUniqueValues, formatPrice} from '../utils/helpers';

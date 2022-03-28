@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState, useReducer } from 'react';
+import {createContext, useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
 import products_reducer from '../reducers/products_reducer';
 import {products_url as url} from '../utils/constants';

@@ -1,6 +1,6 @@
 .filters {
     &::-webkit-scrollbar {
-        width: 0; 
+        width: 3px; 
     }
     position: -webkit-sticky;
     position: sticky;
@@ -9,12 +9,9 @@
     overflow: auto;
 
     @include mobile {
-        display: none;
-    }
-    @include tablet {
         height: unset;
     }
-    
+
     &__search {
         font-size: 1rem;
         padding: .6rem;
