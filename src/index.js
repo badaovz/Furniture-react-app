@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './sass/index.scss';
 import App from './App';
@@ -10,7 +10,7 @@ import {CartProvider} from './context/cart_context';
 import {Auth0Provider} from '@auth0/auth0-react';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <Auth0Provider
       domain='dev-l3swv25f.us.auth0.com'
       clientId='QxLx3tCZqUemGgUp7cnLe6fexaAPgmCW'
@@ -29,6 +29,6 @@ ReactDOM.render(
         </UserProvider>
       </Router>
     </Auth0Provider>
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root')
 );

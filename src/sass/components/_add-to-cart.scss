@@ -1,0 +1,34 @@
+.addToCart {
+
+    &__colors {
+        display: flex;
+        h5 {
+            font-size: 1rem;
+            color: $txt-color-primary;
+        }
+
+        &__item {
+            height: 26px;
+            width: 26px;
+            // padding: .5rem;
+            border-radius: 50%;
+            margin-left: 1rem;
+            color: $white-color;
+            font-size: 1rem;
+            cursor: pointer;
+            @include flex( center, center);
+            opacity: .8;
+            
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__notify {
+        margin-bottom: 1rem;
+        color: $txt-color-primary;
+        font-size: 1.5rem;
+    }
+
+}

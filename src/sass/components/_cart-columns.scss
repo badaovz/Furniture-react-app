@@ -1,0 +1,30 @@
+.cartColumns {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 0 2rem;
+    place-items: center;
+    color: $txt-color-second;
+    &__item {
+        &:first-child{
+            width: 316px;
+            text-align: center;
+        }
+    }
+
+    @include mobile {
+        grid-template-columns: 3fr 1fr auto;
+        gap: 0 1rem;
+        &__item {
+            &:first-child {
+                width: unset;
+            }
+            &.hide {
+                display: none;
+            }
+        }
+    }
+    span {
+        width: 1.6rem;
+    }
+}

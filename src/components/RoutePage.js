@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom';
 
 function RoutePage({path}) {
@@ -7,20 +6,22 @@ function RoutePage({path}) {
 
   return (
     <div className='routerPage'>
+      <section>
         <h3 className='routerPage__item'>
-              {
-                newPath.map((p, index) => (
-                  <li key={index}>
-                    <Link to={p==='home'? '/' : p} key={index}>
-                      <p className='routerPage__item__route'>{p}</p>
-                    </Link>
-                  </li>
-                ))
-              }
-            <p className='routerPage__item__name'>{path[lengPath-1]}</p>
-        </h3>
+                {
+                  newPath.map((p, index) => (
+                    <li key={index}>
+                      <Link to={p==='home'? '/' : p} key={index}>
+                        <p className='routerPage__item__route'>{p}</p>
+                      </Link>
+                    </li>
+                  ))
+                }
+              <p className='routerPage__item__name'>{path[lengPath-1]}</p>
+          </h3>
+      </section>
     </div>
   )
 }
 
-export default RoutePage
+export default RoutePage;

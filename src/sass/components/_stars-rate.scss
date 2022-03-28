@@ -1,0 +1,25 @@
+.starsRate {
+    display: flex;
+    margin: .5rem 0;
+    &__stars {
+        position: relative;
+        display: flex;
+        width: 80px;
+        height: 21px;
+        ul {
+            display: flex;
+            color: orange;
+
+        }
+        &-full {
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+    }
+    span {
+        margin-left: .5rem;
+    }
+}

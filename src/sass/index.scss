@@ -2,31 +2,42 @@
 @import './mixins';
 @import './base';
 
+@import './components/add-to-cart';
+@import './components/amount-button';
+@import './components/cart-bill';
+@import './components/cart-columns';
+@import './components/cart-item';
+@import './components/contact';
+@import './components/empty-cart';
+@import './components/error';
+@import './components/featured-product';
+@import './components/filters';
+@import './components/footer';
+@import './components/hero';
 @import './components/loading';
-
-@import './pages/home';
 @import './components/navbar';
-@import './components/sidebar';
+@import './components/path-not-found';
+@import './components/product-image-preview';
+@import './components/product-info';
+@import './components/product-list';
+@import './components/product';
 @import './components/router-page';
 @import './components/service';
-@import './components/footer';
-
-@import './pages/about';
-
-@import './pages/products';
-@import './components/product';
-@import './components/product-list';
-@import './components/filters';
+@import './components/services';
+@import './components/sidebar';
 @import './components/sort';
-
-@import './pages/cart';
-@import './components/cart-item';
-
-@import './pages/single-product';
-
-@import './components/path-not-found';
-
-@import './pages/checkout';
+@import './components/stars-rate';
 @import './components/stripe-checkout';
 
-@import './components/error';
+@import './pages/about';
+@import './pages/cart';
+@import './pages/checkout';
+@import './pages/products';
+@import './pages/single-product';
+
+
+
+
+
+
+

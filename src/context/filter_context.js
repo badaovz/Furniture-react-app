@@ -1,4 +1,4 @@
-import {createContext, useContext, useEffect, useState, useReducer } from 'react';
+import {createContext, useContext, useEffect, useReducer } from 'react';
 import filter_reducer from '../reducers/filter_reducer';
 import {
     LOAD_PRODUCTS,

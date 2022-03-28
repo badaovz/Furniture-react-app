@@ -17,9 +17,7 @@ function StripeCheckout() {
     const [clientSecret, setClientSecret] = useState('');
     const navigate = useNavigate();
     const { myUser } = useUserContext();
-    
-    // const 
-    
+
     const stripe = useStripe();
     const elements = useElements();
 

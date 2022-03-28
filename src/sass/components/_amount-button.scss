@@ -1,0 +1,23 @@
+.amountButton {
+    display: flex;
+    margin: .5rem 0;
+
+    button {
+        font-size: 1rem;
+        color: $txt-color-second;
+
+        @include mobile-tablet {
+            font-size: .8rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        color: $txt-color-primary;
+        margin: 0 1rem;
+
+        @include mobile-tablet {
+            font-size: 1.2rem;
+        }
+    }
+}
