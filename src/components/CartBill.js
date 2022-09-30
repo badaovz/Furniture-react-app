@@ -7,8 +7,6 @@ function CartBill() {
     const { total_amount, shipping_fee, cart} = useCartContext();
     const {myUser, loginWithRedirect} = useUserContext();
     const isShippingFee = cart.every(cartItem => cartItem.shipping);
-    console.log('CartLength: ', isShippingFee.length)
-    console.log('Cart: ', cart)
 
     return (
         <div className='cartBill'>

@@ -6,7 +6,6 @@ import {
     COUNT_CART_TOTALS,  
     CHANGE_COLOR_CART_ITEM,
     OPEN_CART_COLORS,
-    CLOSE_CART_COLORS
 } from '../actions';
 
 const cart_reducer = (state, action) => {
@@ -28,7 +27,6 @@ const cart_reducer = (state, action) => {
 
             return {...state, cart: tempCart};
         }else {
-            console.log('PROduct:', product);
             const newItem = {
                 id: id + color,
                 name: product.name,
@@ -63,26 +61,9 @@ const cart_reducer = (state, action) => {
         return {...state, cart: tempCart}
     }
 
-    // if(action.type === CLOSE_CART_COLORS) {
-    //     const tempCart = state.cart.map((cartItem) => {
-    //         console.log('RootID: ', cartItem.id.find('#'));
-    //         if(cartItem.id === action.payload){
-    //             // let rootId = id.
-    //             return {
-    //                 ...cartItem,
-    //                 isColorsOpen: false,
-    //                 // id: 
-    //             }
-    //         }
-    //         return cartItem
-    //     })
-    //     return {...state, cart: tempCart}
-    // }
-
     if(action.type === CHANGE_COLOR_CART_ITEM) {
         const {id, color} = action.payload;
         const rootId = id.slice(0, id.lastIndexOf('#'));
-        console.log('RootID: ', rootId);
         let tempCart = state.cart.map(cartItem => {
             if(cartItem.id === id){
                 if(state.cart.find(i => i.id === rootId + color)){

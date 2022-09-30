@@ -8,11 +8,8 @@ import {
     COUNT_CART_TOTALS,
     CHANGE_COLOR_CART_ITEM,
     OPEN_CART_COLORS,
-    CLOSE_CART_COLORS
 } from '../actions';
 
-
-console.log('ssds sss sss')
 
 const getLocalStorage = () => {
     let cart = localStorage.getItem('cart');
@@ -51,10 +48,6 @@ export const CartProvider = ({children}) => {
         dispatch({ type: OPEN_CART_COLORS, payload: id})
     }
 
-    const closeCartItemColors = (id) => {
-        dispatch({ type: CLOSE_CART_COLORS, payload: id})
-    }
-
     const changeColorCartItem = (id, color) => {
         dispatch({ type: CHANGE_COLOR_CART_ITEM, payload: {id, color}})
     }
@@ -73,7 +66,6 @@ export const CartProvider = ({children}) => {
             addToCart,
             removeCartItem,
             openCartItemColors,
-            closeCartItemColors,
             changeColorCartItem,
             toggleAmount,
             clearCart,

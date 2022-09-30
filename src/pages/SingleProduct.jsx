@@ -15,8 +15,6 @@ function SingleProduct({path}) {
         single_product_loading: loading
     } = useProductsContext(); 
     
-    console.log('SingProduct: ', single_product)
-
     const { name } = single_product;
 
     let newPath = [...path, `/${name}`]
@@ -24,7 +22,7 @@ function SingleProduct({path}) {
     useEffect(() => {
         fetchSingleProduct(`${url}${id}`);
            
-    }, [id]);
+    }, [id, fetchSingleProduct]);
 
     useEffect(() => {
         if(error) {
@@ -32,7 +30,7 @@ function SingleProduct({path}) {
                 return navigate('/');
             }, 3000)
         }
-    }, [error]);
+    }, [error, navigate]);
 
     if(loading) {
         return <Loading />
