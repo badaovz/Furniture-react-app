@@ -10,8 +10,6 @@ import {useFilterContext} from '../context/filter_context';
 function Products({path}) {
   const {filtered_products, grid_view} = useFilterContext();
 
-  console.log('all_products: ', filtered_products);
-
   return (
     <div>
       <RoutePage path={path}/>

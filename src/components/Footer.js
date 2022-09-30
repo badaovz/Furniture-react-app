@@ -23,7 +23,7 @@ function Footer() {
                         follows.map(follow => {
                             let {id, icon, text, url} = follow;
                             return (
-                                <a href={url} key={id}><span>{icon}</span> {text}</a>
+                                <a href={url} key={id} target='_blank' rel="noopener noreferrer"><span>{icon}</span> {text}</a>
                             )
                         })
                     }
@@ -31,7 +31,7 @@ function Footer() {
             </div>
         </section>
         <hr />
-        <p className='footer__public'>© 2022 <span>ComfySlothAll</span> rights reserved</p>
+        <p className='footer__public'>© 2022 <span>FurnitureWeb</span> All rights reserved</p>
     </div>
   )
 }

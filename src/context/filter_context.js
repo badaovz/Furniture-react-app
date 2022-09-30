@@ -2,8 +2,8 @@ import {createContext, useContext, useEffect, useReducer } from 'react';
 import filter_reducer from '../reducers/filter_reducer';
 import {
     LOAD_PRODUCTS,
-    SET_GRIDVIEW,
-    SET_LISTVIEW,
+    SET_GRID_VIEW,
+    SET_LIST_VIEW,
     SORT_PRODUCTS,
     UPDATE_SORT,
     FILTER_PRODUCTS,
@@ -45,11 +45,11 @@ export const FilterProvider = ({ children}) => {
     }, [state.sort, state.filters]);
 
     const setGridView = () => {
-        dispatch({ type: SET_GRIDVIEW});
+        dispatch({ type: SET_GRID_VIEW});
     }
 
     const setListView = () => {
-        dispatch({ type: SET_LISTVIEW});
+        dispatch({ type: SET_LIST_VIEW});
     }
 
     const updateSort = (e) => {
@@ -73,8 +73,6 @@ export const FilterProvider = ({ children}) => {
         if(name === 'shipping') {
             value = e.target.checked;
         }
-
-        console.log('Value: ', value)
 
         dispatch({ type: UPDATE_FILTERS, payload: {name, value}});
     }

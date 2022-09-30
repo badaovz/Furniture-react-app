@@ -1,7 +1,7 @@
 import {
     LOAD_PRODUCTS,
-    SET_GRIDVIEW,
-    SET_LISTVIEW,
+    SET_GRID_VIEW,
+    SET_LIST_VIEW,
     SORT_PRODUCTS,
     UPDATE_SORT,
     FILTER_PRODUCTS,
@@ -21,11 +21,11 @@ const filter_reducer = (state, action) => {
         }
     }
 
-    if(action.type === SET_GRIDVIEW) {
+    if(action.type === SET_GRID_VIEW) {
         return {...state, grid_view: true};
     }
 
-    if(action.type === SET_LISTVIEW) {
+    if(action.type === SET_LIST_VIEW) {
         return {...state, grid_view: false};
     }
 
@@ -72,7 +72,7 @@ const filter_reducer = (state, action) => {
         let tempProducts = [...all_products];
         if(text) {
             tempProducts = tempProducts.filter((product) => 
-                product.name.toLowerCase().startsWith(text)
+                product.name.toLowerCase().includes(text)
             )
         }
 
@@ -85,7 +85,6 @@ const filter_reducer = (state, action) => {
 
         if(color !== 'all') {
             tempProducts = tempProducts.filter(product => {
-                console.log('Color: ', product.colors)
                 return product.colors.find(c => c === color);
             })
         }
@@ -93,7 +92,7 @@ const filter_reducer = (state, action) => {
         tempProducts = tempProducts.filter(product => product.price <= price);
 
         if(shipping) {
-            tempProducts = tempProducts.filter((product) => product.shipping === true)
+            tempProducts = tempProducts.filter((product) => product.shipping)
         }
 
         return {
