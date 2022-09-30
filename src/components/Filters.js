@@ -14,8 +14,6 @@ function Filters() {
     const companies = getUniqueValues(products, 'company');
     const colors = getUniqueValues(products, 'colors');
 
-    console.log("Cat: ", categories);
-
 
     const {text, category, company, color, price, shipping, min_price, max_price} = filters;
 
@@ -49,6 +47,7 @@ function Filters() {
                 <select 
                     className='filters__company__select'
                     name='company'
+                    value={company}
                     onChange={(e) => updateFilters(e)}
                 >
                     {

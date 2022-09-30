@@ -5,8 +5,14 @@ import {
     TOGGLE_CART_ITEM_AMOUNT,    
     REMOVE_CART_ITEM,   
     CLEAR_CART, 
-    COUNT_CART_TOTALS,  
+    COUNT_CART_TOTALS,
+    CHANGE_COLOR_CART_ITEM,
+    OPEN_CART_COLORS,
+    CLOSE_CART_COLORS
 } from '../actions';
+
+
+console.log('ssds sss sss')
 
 const getLocalStorage = () => {
     let cart = localStorage.getItem('cart');
@@ -41,6 +47,19 @@ export const CartProvider = ({children}) => {
         dispatch({ type: TOGGLE_CART_ITEM_AMOUNT, payload: {id, value}});
     }
 
+    const openCartItemColors = (id) => {
+        dispatch({ type: OPEN_CART_COLORS, payload: id})
+    }
+
+    const closeCartItemColors = (id) => {
+        dispatch({ type: CLOSE_CART_COLORS, payload: id})
+    }
+
+    const changeColorCartItem = (id, color) => {
+        dispatch({ type: CHANGE_COLOR_CART_ITEM, payload: {id, color}})
+    }
+
+
     const clearCart = () => dispatch({type: CLEAR_CART});
 
     useEffect(() => {
@@ -53,6 +72,9 @@ export const CartProvider = ({children}) => {
             ...state,
             addToCart,
             removeCartItem,
+            openCartItemColors,
+            closeCartItemColors,
+            changeColorCartItem,
             toggleAmount,
             clearCart,
         }}

@@ -1,4 +1,5 @@
 import { Services, Hero, FeaturedProduct, Contact } from '../components';
+import ChatBot from '../components/ChatBot';
 
 function Home() {
 

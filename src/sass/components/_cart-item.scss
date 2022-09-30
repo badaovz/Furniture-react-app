@@ -38,25 +38,70 @@
                 font-size: 1rem;
                 text-transform: capitalize;
                 color: $txt-color-primary;
+                &:hover {
+                    cursor: pointer;
+                }
+
                 @include mobile {
                     font-size: .8rem;
                 }
             }
             &__color {
-                @include flex( center, flex-start);
-                font-size: 1rem;
-                color: $txt-color-second;
-                @include mobile {
-                    font-size: .8rem;
-                }
-                span {
-                    margin-left: 1rem;
-                    padding: .5rem;
+                position: relative;
+                p {
+                    @include flex( center, flex-start);
+                    font-size: 1rem;
+                    color: $txt-color-second;
                     @include mobile {
-                        padding: .4rem;
-                        border-radius: 50%;
+                        font-size: .8rem;
                     }
+                    span {
+                        margin-left: 1rem;
+                        padding: .5rem;
+                        cursor: pointer;
+                        @include mobile {
+                            padding: .4rem;
+                            border-radius: 50%;
+                        }
 
+                    }
+                }
+                &__changeBox {
+                    display: none;    
+                    &.active {
+                        display: flex;
+                        background-color: #EADED7;
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        height: 100%;
+                        align-items: center;
+                        gap: 0.5em;
+                        padding: 0.2em;
+                        margin-left: 3.4rem;
+                        li {
+                            padding: .5rem;
+                            cursor: pointer;
+    
+                            @include mobile {
+                                padding: .4rem;
+                                border-radius: 50%;
+                            }
+    
+                            &::before {
+                                content: '';
+                                border-top: 4px solid transparent;
+                                border-left: 4px solid transparent;
+                                border-bottom: 4px solid #EADED7;
+                                border-right: 4px solid transparent;
+                                position: absolute;
+                                top: 0;
+                                left: 0.25rem;
+                                transform: translateY(-100%);
+                            }
+    
+                        }
+                    }
                 }
             }
 

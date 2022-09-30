@@ -1,10 +1,27 @@
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import { AmountButton } from '../components';
 import { useCartContext } from '../context/cart_context';
 import { formatPrice } from '../utils/helpers';
 
-function CartItem({id, color, amount, image, name, price}) {
-    const {removeCartItem, toggleAmount} = useCartContext();
+function CartItem({
+    id,
+    color,
+    colors,
+    amount,
+    image,
+    name,
+    price,
+    isColorsOpen,
+}) {
+    console.log('ID:', id);
+    const {
+        removeCartItem,
+        toggleAmount,
+        openCartItemColors,
+        changeColorCartItem,
+    } = useCartContext();
+    console.log('ISCoLOROPEN: ', isColorsOpen);
 
     return (
         <div className='cartItem'>
@@ -12,25 +29,55 @@ function CartItem({id, color, amount, image, name, price}) {
                 <img src={image} className='cartItem__info__img' alt='img' />
                 <div className='cartItem__info__content'>
                     <h3 className='cartItem__info__content__name'>
+                    <Link to={`/products/${id}`}>
                         {name}
+                    </Link>
                     </h3>
-                    <p className='cartItem__info__content__color'>
-                        Color: <span style={{backgroundColor: `${color}`}}></span>
+                    <div className='cartItem__info__content__color'>
+                        <p>
+                            Color:{' '}
+                            <span
+                                style={{ backgroundColor: `${color}` }}
+                                onClick={() => {
+                                    console.log('click: ', id);
+                                    openCartItemColors(id);
+                                }}
+                            ></span>
+                        </p>
+                        <ul
+                            className={`cartItem__info__content__color__changeBox ${isColorsOpen ? 'active' : ''}` }
+                        >
+                            {colors.map((c) => (
+                                <li
+                                    style={{ backgroundColor: `${c}` }}
+                                    key={c}
+                                    onClick={() => changeColorCartItem(id, c)}
+                                ></li>
+                            ))}
+                        </ul>
+                    </div>
+                    <p className='cartItem__info__content__price'>
+                        {formatPrice(price)}
                     </p>
-                    <p className='cartItem__info__content__price'>{formatPrice(price)}</p>
                 </div>
             </div>
             <p className='cartItem__price hide'>{formatPrice(price)}</p>
-            <AmountButton amount={amount} increase={()=> toggleAmount(id, 'inc')} decrease={() => toggleAmount(id, 'dec')} />
+            <AmountButton
+                amount={amount}
+                increase={() => toggleAmount(id, 'inc')}
+                decrease={() => toggleAmount(id, 'dec')}
+            />
             <p className='cartItem__subtotal hide'>
-                {formatPrice(price*amount)}
+                {formatPrice(price * amount)}
             </p>
-            <button 
+            <button
                 className='cartItem__remove'
                 onClick={() => removeCartItem(id)}
-            ><FaTrash /></button>
+            >
+                <FaTrash />
+            </button>
         </div>
-    )
+    );
 }
 
 export default CartItem;

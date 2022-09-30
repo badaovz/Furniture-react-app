@@ -15,3 +15,5 @@ export const getUniqueValues = (data, type) => {
     return ['all', ...new Set(unique)]; // only save unique values
 
 }
+
+

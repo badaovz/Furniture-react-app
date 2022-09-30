@@ -50,7 +50,7 @@ function StripeCheckout() {
                 card: elements.getElement(CardElement),
             },
         })
-        console.log('vao day')
+        
         if(payload.error) {
             setError(`Payment failed ${payload.error.message}`);
             setProcessing(false);
