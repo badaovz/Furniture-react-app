@@ -7,7 +7,6 @@ function StarsRate({single_product}) {
     
     useEffect(() => {
         const percent = (stars/5 * 100);
-        console.log('StarRef: ', percent)
         starRef.current.style.width = `${percent}%`;
     }, [stars]);
             

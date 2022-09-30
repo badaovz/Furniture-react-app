@@ -14,14 +14,12 @@ function CartItem({
     price,
     isColorsOpen,
 }) {
-    console.log('ID:', id);
     const {
         removeCartItem,
         toggleAmount,
         openCartItemColors,
         changeColorCartItem,
     } = useCartContext();
-    console.log('ISCoLOROPEN: ', isColorsOpen);
 
     return (
         <div className='cartItem'>
@@ -39,7 +37,6 @@ function CartItem({
                             <span
                                 style={{ backgroundColor: `${color}` }}
                                 onClick={() => {
-                                    console.log('click: ', id);
                                     openCartItemColors(id);
                                 }}
                             ></span>
